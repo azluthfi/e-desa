@@ -15,10 +15,15 @@ class CreateSuratsTable extends Migration
     {
         Schema::create('surat', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('penduduk_id')->nullable();
+            $table->integer('penduduk_id')->unsigned();
             $table->string('jenis')->nullable();
             $table->string('nomor')->nullable();
             $table->timestamps();
+
+            $table->foreign('penduduk_id')
+                ->references('id')
+                ->on('penduduk')
+                ->onDelete('cascade');
         });
     }
 

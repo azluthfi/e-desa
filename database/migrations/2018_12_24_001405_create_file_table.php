@@ -19,6 +19,11 @@ class CreateFileTable extends Migration
             $table->string('nama')->nullable();
             $table->string('fungsi')->nullable();
             $table->timestamps();
+
+            $table->foreign('penduduk_id')
+                ->references('id')
+                ->on('penduduk')
+                ->onDelete('cascade');
         });
     }
 

@@ -33,6 +33,11 @@ class CreatePenduduksTable extends Migration
             $table->string('pekerjaan')->nullable();
             $table->date('tanggal_lahir')->nullable();
             $table->timestamps();
+
+            $table->foreign('dusun_id')
+                ->references('id')
+                ->on('dusun')
+                ->onDelete('cascade');
         });
     }
 

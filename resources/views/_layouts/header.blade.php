@@ -46,7 +46,7 @@
                 {{-- <img src="{{ asset('robust/app-assets/images/portrait/small/avatar-s-1.png') }}" alt="avatar"><i></i> --}}
                 {{-- {!! Auth::user()->preview_img_circle !!} --}}
               </span>
-              <span class="user-name"></span>
+              <span class="user-name">{{ Auth::user()->username }}</span>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
               {{-- <a href="javascript;" class="dropdown-item" data-toggle="modal" data-target="#group_session">

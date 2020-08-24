@@ -18,6 +18,11 @@ class CreateKartuKeluargasTable extends Migration
             $table->integer('penduduk_id')->unsigned();
             $table->string('nomor')->nullable();
             $table->timestamps();
+
+            $table->foreign('penduduk_id')
+                ->references('id')
+                ->on('penduduk')
+                ->onDelete('cascade');
         });
     }
 

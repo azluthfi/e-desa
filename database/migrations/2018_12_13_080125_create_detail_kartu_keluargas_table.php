@@ -19,6 +19,16 @@ class CreateDetailKartuKeluargasTable extends Migration
             $table->integer('penduduk_id')->unsigned();
             $table->string('role')->nullable(); 
             $table->timestamps();
+
+            $table->foreign('penduduk_id')
+                ->references('id')
+                ->on('penduduk')
+                ->onDelete('cascade');
+
+            $table->foreign('kartukeluarga_id')
+                ->references('id')
+                ->on('kartu_keluarga')
+                ->onDelete('cascade');
         });
     }
 

@@ -24,6 +24,11 @@ class CreateKelahiransTable extends Migration
             $table->string('file')->nullable();
             $table->integer('persetujuan')->default(0);
             $table->timestamps();
+
+            $table->foreign('penduduk_id')
+                ->references('id')
+                ->on('penduduk')
+                ->onDelete('cascade');
         });
     }
 
